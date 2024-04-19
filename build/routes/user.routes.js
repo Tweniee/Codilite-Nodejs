@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const user_controller_1 = require("../controller/user/user.controller");
+const dependencies_1 = require("../dependencies/dependencies");
+const asyncHandler_helper_1 = require("../helper/asyncHandler.helper");
+const user_validator_1 = require("../validator/user/user.validator");
+const route = dependencies_1.Router();
+exports.route = route;
+route.post("/resgister-user", user_validator_1.userRegisterValidation, asyncHandler_helper_1.asyncHandler(user_controller_1.userRegisterController));
+route.post("/login", user_validator_1.userRegisterValidation, asyncHandler_helper_1.asyncHandler(user_controller_1.userLoginController));
